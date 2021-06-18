@@ -75,7 +75,7 @@ const Form = (props) => {
 
             <br />
 
-            <Link to="/UserList">Return to Contact List</Link>
+            <Link to="/">Return to Contact List</Link>
           </div>
         </div>
       </div>

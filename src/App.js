@@ -4,10 +4,11 @@ import Home from "./Home";
 import UserList from "./UserList";
 import Form from "./Form";
 import UserDetail from "./UserDetail";
+import {useHistory} from "react-router-dom";
 
 const App = () => {
   const [users, setUsers] = useState([
-    { imageURL: "", name: "Ben Blocker", email: "G", phone: "555-5555" },
+    { imageURL: "", name: "", email: "", phone: "" },
   ]);
 
   const addUser = (user) => {
@@ -26,7 +27,10 @@ const App = () => {
           path="/UserList"
           render={() => <UserList addUser={addUser} users={users} />}
         />
-        <Route path="/Form" component={Form} />
+        <Route
+        path="/Form"
+        render={() => <Form history={useHistory} addUser={addUser} users={users} />}
+        />
         <Route path="/UserDetail" component={UserDetail} />
       </Switch>
     </div>

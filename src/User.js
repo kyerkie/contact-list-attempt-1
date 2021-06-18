@@ -12,7 +12,7 @@ const User = ({userId, users}) => {
   return (
     <div>
       <h1>{user.name} (#{user.number})</h1>
-      <Link to='/UserList'>Back</Link>
+      <Link to='/'>Back</Link>
     </div>
   )
 }
