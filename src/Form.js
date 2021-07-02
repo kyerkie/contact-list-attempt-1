@@ -8,14 +8,15 @@ const Form = (props) => {
   const [phone, setPhone] = useState("");
 
   const handleSubmitContactClick = () => {
+
     props.addUser({
-      imageURL,
-      name,
-      email,
-      phone
+      iamgeURL: imageURL,
+      name: name,
+      email: email,
+      phone: phone
     });
 
-    props.history.push("/UserList");
+    props.history.push("/");
   };
 
   return (

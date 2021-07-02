@@ -4,11 +4,16 @@ import Home from "./Home";
 import UserList from "./UserList";
 import Form from "./Form";
 import UserDetail from "./UserDetail";
-import {useHistory} from "react-router-dom";
+import "./App.css";
 
 const App = () => {
   const [users, setUsers] = useState([
-    { imageURL: "", name: "", email: "", phone: "" },
+    {
+      imageURL: "https://i.imgflip.com/419day.png",
+      name: "Mr. Shockey",
+      email: "shockfish@gmail.com",
+      phone: "1-800-cal-dory",
+    },
   ]);
 
   const addUser = (user) => {
@@ -20,17 +25,19 @@ const App = () => {
   return (
     <div>
       <Switch>
-        <Route exact path="/" 
-        render={() => <Home addUser={addUser} users={users} />}
-        />
         <Route
-          path="/UserList"
-          render={() => <UserList addUser={addUser} users={users} />}
+          exact
+          path="/"
+          render={() => <Home addUser={addUser} users={users} />}
         />
+
         <Route
-        path="/Form"
-        render={() => <Form history={useHistory} addUser={addUser} users={users} />}
+          path="/Form"
+          render={(props) => (
+            <Form history={props.history} users={users} addUser={addUser} />
+          )}
         />
+
         <Route path="/UserDetail" component={UserDetail} />
       </Switch>
     </div>

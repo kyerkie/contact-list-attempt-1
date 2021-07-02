@@ -24,9 +24,7 @@ const Home = ({ users }) => (
             {users.map((user, index) => (
               <tr key={user.number}>
                 <th scope="row">{index+1}</th>
-                <td>
-                  <Link to={`/UserList/${user.number}`}>{user.iamgeURL}</Link>
-                </td>
+                <td><img src={user.imageURL} alt={user.name} className="list-image"/></td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
