@@ -12,21 +12,20 @@ const App = () => {
       imageURL: "https://i.imgflip.com/419day.png",
       name: "Mr. Shockey",
       email: "shockfish@gmail.com",
-      phone: "1-800-cal-dory",
+      phone: "1-800-sho-cked",
     },
   ]);
 
   const addUser = (user) => {
-    setUsers((users) => {
-      return [...users, user];
-    });
+    setUsers([...users, user]);
   };
 
   return (
     <div>
       <Switch>
         <Route
-          exact path="/"
+          exact
+          path="/"
           render={() => <Home addUser={addUser} users={users} />}
         />
 

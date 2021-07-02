@@ -8,7 +8,9 @@ const Home = ({ users }) => (
           <h1 class="text-center">Yerkie's Contact List</h1>
         </div>
 
-        <a class="btn btn-primary" href="./Form" role="button">Add a Contact</a>
+        <Link to="/Form">
+          <button class="btn btn-primary">Add Contact</button>
+        </Link>
 
         <table class="table">
           <thead>
@@ -23,8 +25,14 @@ const Home = ({ users }) => (
           <tbody>
             {users.map((user, index) => (
               <tr key={user.number}>
-                <th scope="row">{index+1}</th>
-                <td><img src={user.imageURL} alt={user.name} className="list-image"/></td>
+                <th scope="row">{index + 1}</th>
+                <td>
+                  <img
+                    src={user.imageURL}
+                    alt={user.name}
+                    className="list-image"
+                  />
+                </td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
