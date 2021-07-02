@@ -10,10 +10,10 @@ const Form = (props) => {
   const handleSubmitContactClick = () => {
 
     props.addUser({
-      iamgeURL: imageURL,
-      name: name,
-      email: email,
-      phone: phone
+      imageURL,
+      name,
+      email,
+      phone
     });
 
     props.history.push("/");

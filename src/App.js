@@ -26,8 +26,7 @@ const App = () => {
     <div>
       <Switch>
         <Route
-          exact
-          path="/"
+          exact path="/"
           render={() => <Home addUser={addUser} users={users} />}
         />
 
